@@ -22,4 +22,4 @@ $ npm run start
 
 * I used `create-react-app` to stand up the front end UI, and built the components using Material UI.
 * For the server, I used `express` and `express-ws` for the WebSocket functionality.
-* For the cli, I used `child_process` for making all three node thingies work in the same terminal window, `readline` for cli interactions, `fs` and `path` to pull JSON from files, and `isomorphic-fetch` to talk to the server from the cli.
+* For the cli, I used `child_process` for making all three node thingies start up from the same terminal window and start command, `readline` for cli interactions, `fs` and `path` to pull JSON from files, and `isomorphic-fetch` to talk to the server from the cli.
