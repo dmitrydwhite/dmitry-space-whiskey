@@ -14,9 +14,7 @@ class App extends Component {
           <img src={logo} className="App-logo" alt="logo" />
           <h1 className="App-title">Moon Shots™ Barrel Tracker</h1>
         </header>
-        <Grid container>
-          <DataLink />
-        </Grid>
+        <DataLink />
       </div>
     );
   }

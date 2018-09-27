@@ -71,13 +71,14 @@ class ControlsPanel extends Component {
    * @param {React.SyntheticEvent} event The input change event.
    */
   handleSearchInputChange = (event) => {
-    const searchTerm = event.target.value;
-    const { searchIn } = this.state;
-
     // Coding for multiple word searches is hard :(
     if (event.target.value.indexOf(' ') > -1) {
       event.target.value = event.target.value.replace(' ', '');
     }
+
+    const searchTerm = event.target.value;
+    const { searchIn } = this.state;
+
 
     this.setState({ searchTerm });
 
