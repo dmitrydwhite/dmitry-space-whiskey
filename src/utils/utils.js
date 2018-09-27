@@ -21,7 +21,7 @@ export const displayTimeSince = (lastUpdate) => {
     difference = difference % timeBreaks[i];
   }
 
-  values.push(`${difference}`.length < 2 ? `0${difference}` : difference);
+  values.push(`${difference}`.length < 2 ? `0${difference}` : `${difference}`);
 
   return values.join(':');
 };
