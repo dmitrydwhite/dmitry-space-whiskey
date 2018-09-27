@@ -10,6 +10,7 @@ import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
 import TableRow from '@material-ui/core/TableRow';
 import TableCell from '@material-ui/core/TableCell';
+import TableHead from '@material-ui/core/TableHead';
 import Typography from '@material-ui/core/Typography';
 import { withStyles } from '@material-ui/core/styles';
 
@@ -37,9 +38,21 @@ const mainTableStyle = () => ({
   },
 })
 
-// Two augmented components with styles, for use below.
+/**
+ * Style function for use on Barrel Info table header rows.
+ * @returns {Object}
+ */
+const barrelInfoHeadStyle = () => ({
+  head: {
+    backgroundColor: '#2E42B0',
+    color: '#2FC4E0',
+  },
+});
+
+// Three augmented components with styles, for use below.
 const StyledTableTitle = withStyles(tableTitleStyle)(Typography);
 const StyledInfoTable = withStyles(mainTableStyle)(Table);
+const StyledTableHeaderRowCell = withStyles(barrelInfoHeadStyle)(TableCell);
 
 class Satellite extends Component {
   /**
@@ -89,11 +102,13 @@ class Satellite extends Component {
           </Grid>
           <Grid item xs={8}>
             <StyledInfoTable>
-              <TableBody>
+              <TableHead>
                 <TableRow>
-                  <TableCell>Barrel ID</TableCell>
-                  <TableCell>Status</TableCell>
+                  <StyledTableHeaderRowCell>Barrel ID</StyledTableHeaderRowCell>
+                  <StyledTableHeaderRowCell>Status</StyledTableHeaderRowCell>
                 </TableRow>
+              </TableHead>
+              <TableBody>
                 {goodBarrels.map((barrel, idx) => (
                   <TableRow key={idx}>
                     <TableCell>{barrel.barrel_id}</TableCell>
@@ -127,11 +142,13 @@ class Satellite extends Component {
           </Grid>
           <Grid item xs={8}>
             <StyledInfoTable>
-              <TableBody>
+              <TableHead>
                 <TableRow>
-                  <TableCell>Barrel ID</TableCell>
-                  <TableCell>Error</TableCell>
+                  <StyledTableHeaderRowCell>Barrel ID</StyledTableHeaderRowCell>
+                  <StyledTableHeaderRowCell>Error</StyledTableHeaderRowCell>
                 </TableRow>
+              </TableHead>
+              <TableBody>
                 {barrelErrors.map((errObj, idx) => (
                   <TableRow key={idx}>
                     <TableCell>{errObj.barrelId}</TableCell>
