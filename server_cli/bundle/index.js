@@ -33,7 +33,7 @@ let serverSatData = {
   },
 };
 
-const log = (...args) => console.log(`[ MS™ B.E.U.S. ] - ${new Date(Date.now()).toTimeString()} -`, ...args);
+const log = (...args) => console.log(`\n[ MS™ B.E.U.S. ] - ${new Date(Date.now()).toTimeString()} -`, ...args);
 
 const newManager = function () {
   function hasWs() {
